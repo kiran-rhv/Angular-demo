@@ -1,0 +1,24 @@
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-primary background mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand shadow-none" routerLink="/home" routerlinkactive="active">Logo</a>
+            <button class="navbar-toggler shadow-none btn-outline-primary" type="button"
+                (click)="isMenuCollapsed = !isMenuCollapsed">
+                &#9776;
+            </button>
+            <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link shadow-none" routerLink="/users" routerlinkactive="active"
+                            (click)="isMenuCollapsed = true">Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link shadow-none" routerLink="/features" routerlinkactive="active"
+                            (click)="isMenuCollapsed = true">Features
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
