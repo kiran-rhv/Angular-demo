@@ -9,6 +9,8 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { FeaturesComponent } from './Screens/features/features.component';
 import { LoginComponent } from './Screens/login/login.component';
 import { HomescreenComponent } from './Screens/homescreen/homescreen.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,13 @@ import { HomescreenComponent } from './Screens/homescreen/homescreen.component';
     LoginComponent,
     HomescreenComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    FormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
