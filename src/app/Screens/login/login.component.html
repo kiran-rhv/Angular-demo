@@ -8,22 +8,37 @@
         </div>
         <div class="col-md-6">
             <div class="d-flex justify-content-center">
-                <form>
+                <form *ngIf="!isloggedIn" name="form" (ngSubmit)=" f.form.valid && onSubmit()" #f="ngForm" novalidate>
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-4 col-form-label text-white">Email</label>
                         <div class="col-sm-8">
-                            <input type="email" class="form-control input-box text-white" id="inputEmail3">
+                            <input type="email" class="form-control input-box text-white" id="inputEmail3" name="email"
+                                [(ngModel)]="form.email" required #email="ngModel">
+                            <div class="alert alert-danger" role="alert" *ngIf="email.errors && f.submitted">E-mail is
+                                required</div>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword3" class="col-sm-4 col-form-label text-white">Password</label>
                         <div class="col-sm-8">
-                            <input type="password" class="form-control input-box text-white" id="inputPassword3">
+                            <input type="password" class="form-control input-box text-white" id="inputPassword3"
+                                name="password" [(ngModel)]="form.password" required #password="ngModel">
+                            <div class="alert alert-danger" role="alert" *ngIf="password.errors && f.submitted">
+                                <div *ngIf="password.errors['required']">Password is required</div>
+                            </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-outline-primary w-100 my-3" routerLink="/home"
-                        routerlinkactive="active">LOGIN</button>
+                    <button type="submit" class="btn btn-outline-primary w-100 my-3 shadow-none">LOGIN
+                    </button>
+                    <div class="form-group">
+                        <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
+                            Login failed: {{ errorMessage }}
+                        </div>
+                    </div>
                 </form>
+                <div class="alert alert-success" *ngIf="isloggedIn">
+                    Logged in as {{ roles }}.
+                </div>
             </div>
         </div>
     </div>
