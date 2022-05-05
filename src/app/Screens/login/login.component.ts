@@ -21,16 +21,12 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private tokenStorage: TokenStorageService
   ) {}
-  ngOnInit(): void {
-    if (this.tokenStorage.getToken()) {
-      this.isloggedIn = true;
-    }
-  }
+  ngOnInit(): void {}
+
   onSubmit(): void {
     const { email, password } = this.form;
     this.authService.login(email, password).subscribe({
       next: (data) => {
-        this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
         this.isLoginFailed = false;
         this.isloggedIn = true;
