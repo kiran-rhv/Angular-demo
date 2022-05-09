@@ -22,4 +22,15 @@ export class AuthService {
       httpOptions
     );
   }
+
+  register(email: string, password: string): Observable<any> {
+    return this.http.post(
+      'https://reqres.in/api/register',
+      {
+        email,
+        password,
+      },
+      httpOptions
+    );
+  }
 }

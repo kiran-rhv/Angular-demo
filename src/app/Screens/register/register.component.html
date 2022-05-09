@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row align-items-center register-wrapper">
+        <div class=" col-md-6">
+            <div class="d-flex justify-content-center">
+                <img src="../../../assets/images/login-screen.svg" class="img-fluid" width="400" height="400"
+                    alt="Signup screen image" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="d-flex justify-content-center">
+                <form *ngIf="!isRegistered" name="form" (ngSubmit)="r.form.valid && onSubmit()" #r="ngForm" novalidate
+                    autocomplete="on">
+                    <div class="form-group row my-2">
+                        <label for="reg_mail" class="col-sm-4 col-form-label text-white">Email</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control input-box text-white" id="reg_mail" name="email"
+                                [(ngModel)]="form.email" required #email="ngModel" />
+                            <div class="error-msg" role="alert" *ngIf="email.errors && r.submitted">E-mail is
+                                required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row my-2">
+                        <label for="reg_pwd" class="col-sm-4 col-form-label text-white">Password</label>
+                        <div class="col-sm-8">
+                            <input type="password" class="form-control input-box text-white" id="reg_pwd"
+                                name="password" [(ngModel)]="form.password" required #password="ngModel" />
+                            <div class="error-msg" role="alert" *ngIf="password.errors && r.submitted">
+                                <div *ngIf="password.errors['required']">Password is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary my-3 w-100 shadow-none">REGISTER
+                    </button>
+                    <button type="button" class="btn btn-outline-primary my-3 shadow-none w-100"
+                        routerLink="/login">SWITCH TO
+                        LOGIN
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

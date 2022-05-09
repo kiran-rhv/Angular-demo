@@ -4,6 +4,7 @@ import { FeaturesComponent } from './Screens/features/features.component';
 import { LoginComponent } from './Screens/login/login.component';
 import { HomescreenComponent } from './Screens/homescreen/homescreen.component';
 import { UsersComponent } from './Screens/users/users.component';
+import { RegisterComponent } from './Screens/register/register.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -14,6 +15,8 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: '', redirectTo: 'features', pathMatch: 'full' },
   { path: 'features', component: FeaturesComponent },
+  { path: '', redirectTo: 'register', pathMatch: 'full' },
+  { path: 'register', component: RegisterComponent },
 ];
 
 @NgModule({
