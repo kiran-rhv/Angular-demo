@@ -10,6 +10,7 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class AuthService {
+  users: any;
   constructor(private http: HttpClient) {}
 
   login(email: string, password: string): Observable<any> {
@@ -34,21 +35,7 @@ export class AuthService {
     );
   }
 
-  // users(
-  //   id: number,
-  //   email: string,
-  //   first_name: string,
-  //   last_name: string
-  // ): Observable<any> {
-  //   return this.http.get(
-  //     'https://reqres.in/api/users',
-  //     {
-  //       id,
-  //       email,
-  //       first_name,
-  //       last_name,
-  //     },
-  //     httpOptions
-  //   );
-  // }
+  Users() {
+    return this.http.get<any>('https://reqres.in/api/users');
+  }
 }

@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-users',
@@ -9,16 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class UsersComponent implements OnInit {
   users: any;
   public isCollapsed = true;
-  constructor(private http: HttpClient) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
     this.getUsers();
   }
 
   getUsers() {
-    this.http.get<any>('https://reqres.in/api/users').subscribe((users) => {
+    this.authService.Users().subscribe((users) => {
       this.users = users.data;
-      console.log('this.users', this.users);
     });
   }
 }

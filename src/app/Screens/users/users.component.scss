@@ -2,4 +2,16 @@
   .toggle-box {
     border-radius: 0 !important;
   }
+
+  .user-card {
+    border: none;
+    border-radius: 0;
+    height: 300px;
+
+    .user-img {
+      height: 180px;
+      object-fit: cover;
+      border-radius: 0;
+    }
+  }
 }
