@@ -33,4 +33,22 @@ export class AuthService {
       httpOptions
     );
   }
+
+  // users(
+  //   id: number,
+  //   email: string,
+  //   first_name: string,
+  //   last_name: string
+  // ): Observable<any> {
+  //   return this.http.get(
+  //     'https://reqres.in/api/users',
+  //     {
+  //       id,
+  //       email,
+  //       first_name,
+  //       last_name,
+  //     },
+  //     httpOptions
+  //   );
+  // }
 }

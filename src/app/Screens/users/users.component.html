@@ -1,16 +1,34 @@
-<div class="container height">
-    <p class="text-white">USERS</p>
-    <p>
-        <button type="button" class="btn btn-outline-primary shadow-none" (click)="collapse.toggle()"
-            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
-            Toggle
-        </button>
-    </p>
-    <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
-        <div class="card toggle-box">
-            <div class="card-body">
-                You can collapse this card by clicking Toggle
+<div class="container">
+    <div>
+        <p class="text-white">USERS</p>
+        <p>
+            <button type="button" class="btn btn-outline-primary shadow-none" (click)="collapse.toggle()"
+                [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+                Toggle
+            </button>
+        </p>
+        <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+            <div class="card toggle-box">
+                <div class="card-body">
+                    You can collapse this card by clicking Toggle
+                </div>
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-4" *ngFor="let user of users">
+            <div>
+                <div class="card my-5" style="width: 18rem;">
+                    <img src="{{user.avatar}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{user.first_name}}</h5>
+                        <p class="card-text">{{user.last_name}}</p>
+                        <p class="card-text">{{user.email}}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
