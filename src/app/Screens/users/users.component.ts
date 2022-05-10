@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class UsersComponent implements OnInit {
   users: any;
   public isCollapsed = true;
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private route: Router) {}
 
   ngOnInit(): void {
     this.getUsers();
@@ -19,5 +20,9 @@ export class UsersComponent implements OnInit {
     this.authService.Users().subscribe((users) => {
       this.users = users.data;
     });
+  }
+
+  userInfo(data: any) {
+    this.route.navigate(['userdetail', { id: data.id }]);
   }
 }

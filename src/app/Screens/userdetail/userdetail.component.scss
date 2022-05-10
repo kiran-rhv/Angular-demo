@@ -1,0 +1,19 @@
+.container {
+  .userdetail {
+    min-height: 250px;
+
+    .user-dp {
+      min-height: 250px;
+
+      .user-img {
+        min-height: 250px;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+
+    .user-info {
+      min-height: 250px;
+    }
+  }
+}

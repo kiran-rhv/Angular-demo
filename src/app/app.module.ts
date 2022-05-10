@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './Screens/register/register.component';
 import { ToastrModule } from 'ngx-toastr';
+import { UserdetailComponent } from './Screens/userdetail/userdetail.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ToastrModule } from 'ngx-toastr';
     LoginComponent,
     HomescreenComponent,
     RegisterComponent,
+    UserdetailComponent,
   ],
   imports: [
     BrowserModule,

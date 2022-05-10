@@ -6,12 +6,18 @@
   .user-card {
     border: none;
     border-radius: 0;
-    height: 300px;
+    min-height: 300px;
+    cursor: pointer;
 
-    .user-img {
-      height: 180px;
-      object-fit: cover;
-      border-radius: 0;
+    .user-pic {
+      min-height: 180px;
+      background-color: gray;
+
+      .user-img {
+        min-height: 180px;
+        object-fit: cover;
+        border-radius: 0;
+      }
     }
   }
 }

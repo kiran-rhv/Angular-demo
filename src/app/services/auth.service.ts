@@ -38,4 +38,8 @@ export class AuthService {
   Users() {
     return this.http.get<any>('https://reqres.in/api/users');
   }
+
+  getUserId(id: any): Observable<any> {
+    return this.http.get(`https://reqres.in/api/users/${id}`, httpOptions);
+  }
 }
